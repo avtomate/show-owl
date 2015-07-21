@@ -1,0 +1,31 @@
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+MoviesControllerTest: test_should_get_show
+------------------------------------------
+Processing by MoviesController#show as HTML
+  Rendered movies/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1366ms (Views: 1365.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+MoviesControllerTest: test_should_get_index
+-------------------------------------------
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+MoviesControllerTest: test_should_get_show
+------------------------------------------
+Processing by MoviesController#show as HTML
+  Rendered movies/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 150ms (Views: 150.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+MoviesControllerTest: test_should_get_index
+-------------------------------------------
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
