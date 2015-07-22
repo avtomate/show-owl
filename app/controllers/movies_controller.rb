@@ -41,14 +41,9 @@ class MoviesController < ApplicationController
     #total flight time
     @final_movies = []
     @sorted_movies.each do |movie|
-      p "TIME AT BEGINNING OF ITERATION"
-      p time_remaining
-      p movie.length
       next if time_remaining - movie.length < 0
       @final_movies << movie
       time_remaining -= movie.length
-      p "TIME AT END OF ITERATION"
-      p time_remaining
     end
   end
 end
