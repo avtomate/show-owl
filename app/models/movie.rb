@@ -23,7 +23,9 @@ class Movie < ActiveRecord::Base
 
     end
     @movie_scores = @movie_scores.sort_by{|k,v| v}.reverse
-    
-    @movie_scores
+    @movie_scores.each_key do |key|
+      @sorted_movies << Movie.find(id: key)
+    end
+    @sorted_movies
   end
 end
