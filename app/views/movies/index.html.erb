@@ -1,20 +1,34 @@
 <div class="quiz-container">
   <h1>Index View</h1>
   <h3>Please choose your flight:</h3>
-  <% @flights.each do |flight| %>
-    <a href=""><%= flight.route %></a>
-  <% end %>
+    <form action="/movies/show" method="get">
+      <select name="flight-route">
+        <% @flights.each do |flight| %>
+          <option value="<%=flight.route%>"><%=flight.route%></option>
+        <% end %>
+      </select>
 
-  <h3>Please answer these questions:</h3>
-
-  <% @questions.each do |question| %>
-    <div class="qa-container" id="<%=question.id%>">
-      <h4><%= question.content %></h4>
-      <% question.answers.each do |answer| %>
-        <div class="answer-button"><%= answer.content %></div>
+      <h3>Please answer these questions:</h3>
+      <% @questions.each do |question| %>
+        <div class="qa-container" id="<%=question.id%>">
+          <h4><%= question.content %></h4>
+          <% question.answers.each do |answer| %>
+            <input type="radio" name="q<%=answer.question_id%>-radio" value="<%=answer.content%>"><%=answer.content%><br>
+          <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
+
+      <br><br>
+      <input type="submit" value="Show me the money!">
+    </form>
 </div>
+
 <div class="movies">
 </div>
+
+<!-- <form accept-charset="UTF-8" action="/movies/show" method="get">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="q">Search for:</label>
+  <input id="q" name="q" type="text" />
+  <input name="commit" type="submit" value="Search" />
+</form> -->
