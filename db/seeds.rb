@@ -22,11 +22,11 @@ genres = %w[Action Comedy Drama Western]
                url: Faker::Internet.url)
 end
 
-# Create all possible flights given a set of airports, between 30m and 12h
+# Create all possible flights given a set of airports, between 2h and 12h
 airports = %w[ATL BOS DEN LAX MIA SFO SEA JFK]
 routes = airports.permutation(2).map{ |i| i.join(' - ') }
 routes.length.times do |i|
-  Flight.create(route: routes[i], length: 1800 + Random.rand(23400))
+  Flight.create(route: routes[i], length: 7200 + Random.rand(36000))
 end
 
 # Create quiz with questions and answers
