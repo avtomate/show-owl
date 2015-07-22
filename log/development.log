@@ -432,3 +432,393 @@ Migrating to CreateAnswers (20150721214709)
   [1m[36mQuestion Load (1.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
   [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"
   [1m[36mMovie Load (2.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "flights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "route" varchar, "length" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "info" varchar, "length" integer, "genre" varchar, "year" integer, "country" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721214709')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150721214227')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721214404')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150721214545')
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "flights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "route" varchar, "length" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "info" varchar, "length" integer, "genre" varchar, "year" integer, "country" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721214709')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150721214227')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721214404')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150721214545')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pokemon 2: Resurrection"], ["info", "Qui dicta amet corporis aut eius culpa consequatur."], ["length", 10654], ["genre", "Comedy"], ["year", 2008], ["country", "USA"], ["url", "http://cruickshankprice.biz/clemmie"], ["created_at", "2015-07-22 22:00:49.632779"], ["updated_at", "2015-07-22 22:00:49.632779"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Biography of Nicholas Cage 3: Armed and Fabulous"], ["info", "Est et voluptatem ad ea nihil a."], ["length", 8477], ["genre", "Action"], ["year", 1960], ["country", "Mexico"], ["url", "http://buckridge.net/gwen.conn"], ["created_at", "2015-07-22 22:00:49.639211"], ["updated_at", "2015-07-22 22:00:49.639211"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 3: 2 Furious"], ["info", "Et veniam deserunt commodi cum dignissimos impedit quo beatae."], ["length", 4793], ["genre", "Western"], ["year", 1967], ["country", "USA"], ["url", "http://weimanncrooks.name/wallace"], ["created_at", "2015-07-22 22:00:49.642366"], ["updated_at", "2015-07-22 22:00:49.642366"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Biography of Nicholas Cage 4: Armed and Fabulous"], ["info", "Culpa cumque ipsa pariatur esse suscipit natus eius vel."], ["length", 10663], ["genre", "Drama"], ["year", 1996], ["country", "USA"], ["url", "http://muellertrantow.name/unique"], ["created_at", "2015-07-22 22:00:49.646728"], ["updated_at", "2015-07-22 22:00:49.646728"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Mummy 4: The Reckoning"], ["info", "Totam et esse et deleniti aliquam sit."], ["length", 8824], ["genre", "Western"], ["year", 2015], ["country", "USA"], ["url", "http://mante.info/berniece_herman"], ["created_at", "2015-07-22 22:00:49.650481"], ["updated_at", "2015-07-22 22:00:49.650481"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Pokemon 2: Die Another Day"], ["info", "Aut cum mollitia eius voluptatem autem quo hic voluptatem."], ["length", 8843], ["genre", "Action"], ["year", 2009], ["country", "China"], ["url", "http://beiermitchell.net/lavon.bartell"], ["created_at", "2015-07-22 22:00:49.653121"], ["updated_at", "2015-07-22 22:00:49.653121"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 2: The Reckoning"], ["info", "Dolor dolorem sunt quasi rem qui."], ["length", 4374], ["genre", "Comedy"], ["year", 1970], ["country", "Mexico"], ["url", "http://armstrong.org/chaz"], ["created_at", "2015-07-22 22:00:49.656185"], ["updated_at", "2015-07-22 22:00:49.656185"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Mummy 3: The Reckoning"], ["info", "Fugit maiores sapiente rerum voluptatem nulla aut et accusamus."], ["length", 6759], ["genre", "Western"], ["year", 1990], ["country", "USA"], ["url", "http://larson.name/lonnie"], ["created_at", "2015-07-22 22:00:49.659400"], ["updated_at", "2015-07-22 22:00:49.659400"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Biography of Nicholas Cage 5: 2 Furious"], ["info", "Placeat aspernatur nihil quis magnam dignissimos quos qui recusandae maiores."], ["length", 8609], ["genre", "Action"], ["year", 1993], ["country", "China"], ["url", "http://rutherfordschmitt.org/quinten_langworth"], ["created_at", "2015-07-22 22:00:49.662798"], ["updated_at", "2015-07-22 22:00:49.662798"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Biography of Nicholas Cage 1: Armed and Fabulous"], ["info", "Asperiores aut dolorem aspernatur mollitia aut officiis cumque incidunt est."], ["length", 8700], ["genre", "Western"], ["year", 1981], ["country", "China"], ["url", "http://greenfelder.net/madaline.kirlin"], ["created_at", "2015-07-22 22:00:49.668958"], ["updated_at", "2015-07-22 22:00:49.668958"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars 5: Resurrection"], ["info", "Qui ipsum et dignissimos voluptates provident quasi quia impedit magni."], ["length", 9550], ["genre", "Comedy"], ["year", 1977], ["country", "China"], ["url", "http://purdy.biz/orpha"], ["created_at", "2015-07-22 22:00:49.672009"], ["updated_at", "2015-07-22 22:00:49.672009"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Biography of Nicholas Cage 2: Armed and Fabulous"], ["info", "Incidunt est deserunt aut nulla."], ["length", 6073], ["genre", "Western"], ["year", 1965], ["country", "Mexico"], ["url", "http://marvin.net/garret_marvin"], ["created_at", "2015-07-22 22:00:49.675915"], ["updated_at", "2015-07-22 22:00:49.675915"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Biography of Nicholas Cage 4: With A Vengeance"], ["info", "Ratione sit quae voluptatum qui vero rem amet corrupti harum."], ["length", 3695], ["genre", "Drama"], ["year", 2005], ["country", "Mexico"], ["url", "http://bernier.name/delilah"], ["created_at", "2015-07-22 22:00:49.679113"], ["updated_at", "2015-07-22 22:00:49.679113"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 4: The Reckoning"], ["info", "Voluptatum dolores corrupti sunt id ducimus."], ["length", 9153], ["genre", "Western"], ["year", 1978], ["country", "USA"], ["url", "http://beer.info/grace_larson"], ["created_at", "2015-07-22 22:00:49.684347"], ["updated_at", "2015-07-22 22:00:49.684347"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pokemon 3: Armed and Fabulous"], ["info", "Occaecati reprehenderit at voluptatem eos."], ["length", 8363], ["genre", "Drama"], ["year", 1954], ["country", "Mexico"], ["url", "http://turcotte.org/anthony_wisoky"], ["created_at", "2015-07-22 22:00:49.690756"], ["updated_at", "2015-07-22 22:00:49.690756"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Star Wars 4: The Kingdom Of The Crystal Skull"], ["info", "Rerum sequi adipisci nam in assumenda atque quasi reprehenderit exercitationem."], ["length", 5569], ["genre", "Comedy"], ["year", 1985], ["country", "Mexico"], ["url", "http://runolfon.net/alvis.schinner"], ["created_at", "2015-07-22 22:00:49.694349"], ["updated_at", "2015-07-22 22:00:49.694349"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Biography of Nicholas Cage 4: The Reckoning"], ["info", "Facere quae odio est eligendi modi doloremque voluptate."], ["length", 2144], ["genre", "Drama"], ["year", 1986], ["country", "China"], ["url", "http://grahamklein.name/jarrell"], ["created_at", "2015-07-22 22:00:49.698478"], ["updated_at", "2015-07-22 22:00:49.698478"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 2: 2 Furious"], ["info", "Sit enim sint illo quaerat laudantium et."], ["length", 6138], ["genre", "Action"], ["year", 1963], ["country", "USA"], ["url", "http://baileykuvalis.biz/sincere"], ["created_at", "2015-07-22 22:00:49.702680"], ["updated_at", "2015-07-22 22:00:49.702680"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Hello Kitty Island Adventure 1: With A Vengeance"], ["info", "Veniam quia autem sit voluptatem."], ["length", 1906], ["genre", "Comedy"], ["year", 1972], ["country", "USA"], ["url", "http://keler.net/alysa"], ["created_at", "2015-07-22 22:00:49.706767"], ["updated_at", "2015-07-22 22:00:49.706767"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 4: With A Vengeance"], ["info", "Dolor minus quo natus sed."], ["length", 7598], ["genre", "Comedy"], ["year", 1951], ["country", "Japan"], ["url", "http://hauck.com/antonette"], ["created_at", "2015-07-22 22:00:49.711452"], ["updated_at", "2015-07-22 22:00:49.711452"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Mummy 5: Die Another Day"], ["info", "Aut quas cum sequi voluptas voluptatem magni qui."], ["length", 9896], ["genre", "Western"], ["year", 1990], ["country", "USA"], ["url", "http://pollich.info/roy_ryan"], ["created_at", "2015-07-22 22:00:49.715155"], ["updated_at", "2015-07-22 22:00:49.715155"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Sharknado 5: Resurrection"], ["info", "Expedita distinctio aut laudantium at assumenda."], ["length", 6433], ["genre", "Comedy"], ["year", 1999], ["country", "China"], ["url", "http://kuhiclittle.org/ruel"], ["created_at", "2015-07-22 22:00:49.722593"], ["updated_at", "2015-07-22 22:00:49.722593"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 1: 2 Furious"], ["info", "Ut nisi alias ut neque molestiae et ducimus."], ["length", 3047], ["genre", "Western"], ["year", 1955], ["country", "China"], ["url", "http://prosacco.net/lorenzo.aufderhar"], ["created_at", "2015-07-22 22:00:49.728277"], ["updated_at", "2015-07-22 22:00:49.728277"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 1: Armed and Fabulous"], ["info", "Libero voluptatibus nesciunt ab natus."], ["length", 4023], ["genre", "Action"], ["year", 1992], ["country", "Mexico"], ["url", "http://mayertemard.name/braulio.jacobs"], ["created_at", "2015-07-22 22:00:49.733317"], ["updated_at", "2015-07-22 22:00:49.733317"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Hello Kitty Island Adventure 3: The Reckoning"], ["info", "Iste labore qui et sit nesciunt sed ea consectetur."], ["length", 5497], ["genre", "Western"], ["year", 1966], ["country", "China"], ["url", "http://pfefferrempel.org/geo.lebsack"], ["created_at", "2015-07-22 22:00:49.739659"], ["updated_at", "2015-07-22 22:00:49.739659"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Pokemon 5: The Reckoning"], ["info", "Ipsam ullam atque eveniet nobis ut qui similique cupiditate molestiae."], ["length", 10599], ["genre", "Comedy"], ["year", 2006], ["country", "Mexico"], ["url", "http://lang.info/kyleigh"], ["created_at", "2015-07-22 22:00:49.743660"], ["updated_at", "2015-07-22 22:00:49.743660"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Hello Kitty Island Adventure 5: 2 Furious"], ["info", "Est rerum ut occaecati modi dolorem nobis."], ["length", 4131], ["genre", "Drama"], ["year", 1999], ["country", "USA"], ["url", "http://nitzschestreich.net/carley"], ["created_at", "2015-07-22 22:00:49.747011"], ["updated_at", "2015-07-22 22:00:49.747011"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Mummy 4: 2 Furious"], ["info", "Molestiae quia debitis sit voluptas natus earum in."], ["length", 5097], ["genre", "Drama"], ["year", 1953], ["country", "USA"], ["url", "http://pouros.com/shanie.schmitt"], ["created_at", "2015-07-22 22:00:49.751581"], ["updated_at", "2015-07-22 22:00:49.751581"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pokemon 3: The Kingdom Of The Crystal Skull"], ["info", "Rem ipsum aut facere nostrum."], ["length", 2102], ["genre", "Comedy"], ["year", 2000], ["country", "Mexico"], ["url", "http://osinski.org/allan_nicolas"], ["created_at", "2015-07-22 22:00:49.758493"], ["updated_at", "2015-07-22 22:00:49.758493"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Mummy 4: Die Another Day"], ["info", "Illo dicta itaque totam sed non reiciendis."], ["length", 10352], ["genre", "Comedy"], ["year", 1979], ["country", "USA"], ["url", "http://bogantromp.info/adele_nolan"], ["created_at", "2015-07-22 22:00:49.762394"], ["updated_at", "2015-07-22 22:00:49.762394"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (2.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars 3: Resurrection"], ["info", "Rerum quasi assumenda iusto eaque harum."], ["length", 4778], ["genre", "Action"], ["year", 1963], ["country", "China"], ["url", "http://hammes.name/augustus"], ["created_at", "2015-07-22 22:00:49.769460"], ["updated_at", "2015-07-22 22:00:49.769460"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Star Wars 5: Armed and Fabulous"], ["info", "Voluptatum doloremque voluptas aut voluptatem et."], ["length", 2244], ["genre", "Action"], ["year", 1964], ["country", "China"], ["url", "http://graham.net/loren"], ["created_at", "2015-07-22 22:00:49.772555"], ["updated_at", "2015-07-22 22:00:49.772555"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pokemon 3: Resurrection"], ["info", "Quo assumenda natus ut temporibus omnis debitis ut."], ["length", 4844], ["genre", "Action"], ["year", 1990], ["country", "Japan"], ["url", "http://koelpinstroman.org/clemens"], ["created_at", "2015-07-22 22:00:49.776845"], ["updated_at", "2015-07-22 22:00:49.776845"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Star Wars 3: With A Vengeance"], ["info", "Asperiores ullam dolorum occaecati voluptatibus facere tenetur aut."], ["length", 6892], ["genre", "Western"], ["year", 1989], ["country", "China"], ["url", "http://crist.net/arianna_kerluke"], ["created_at", "2015-07-22 22:00:49.780431"], ["updated_at", "2015-07-22 22:00:49.780431"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 1: Armed and Fabulous"], ["info", "Hic quia blanditiis optio numquam excepturi et aut culpa."], ["length", 10262], ["genre", "Drama"], ["year", 1977], ["country", "Japan"], ["url", "http://rempel.info/destiny.yundt"], ["created_at", "2015-07-22 22:00:49.784179"], ["updated_at", "2015-07-22 22:00:49.784179"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 3: The Kingdom Of The Crystal Skull"], ["info", "Provident omnis et vitae dolorem et eligendi nemo facilis."], ["length", 3031], ["genre", "Drama"], ["year", 1990], ["country", "Japan"], ["url", "http://quigleycarter.name/karli"], ["created_at", "2015-07-22 22:00:49.788714"], ["updated_at", "2015-07-22 22:00:49.788714"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 4: Armed and Fabulous"], ["info", "Asperiores quasi provident dicta voluptatem vero."], ["length", 8198], ["genre", "Western"], ["year", 1958], ["country", "USA"], ["url", "http://connelly.info/eula.nienow"], ["created_at", "2015-07-22 22:00:49.792024"], ["updated_at", "2015-07-22 22:00:49.792024"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Mummy 1: Resurrection"], ["info", "Vitae quae et laudantium aut expedita rem sequi."], ["length", 7969], ["genre", "Western"], ["year", 1975], ["country", "Japan"], ["url", "http://balistreripfeffer.biz/alexie"], ["created_at", "2015-07-22 22:00:49.796859"], ["updated_at", "2015-07-22 22:00:49.796859"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Biography of Nicholas Cage 1: With A Vengeance"], ["info", "Natus in possimus commodi eaque debitis qui sed fuga."], ["length", 3277], ["genre", "Comedy"], ["year", 1979], ["country", "China"], ["url", "http://bergstrom.info/sven_schuster"], ["created_at", "2015-07-22 22:00:49.801323"], ["updated_at", "2015-07-22 22:00:49.801323"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 4: The Kingdom Of The Crystal Skull"], ["info", "Enim illo magni animi eum voluptatum sed blanditiis aut."], ["length", 3898], ["genre", "Drama"], ["year", 2002], ["country", "USA"], ["url", "http://heelbahringer.org/ceasar.gislason"], ["created_at", "2015-07-22 22:00:49.805283"], ["updated_at", "2015-07-22 22:00:49.805283"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sharknado 2: 2 Furious"], ["info", "Molestiae vel nesciunt voluptates velit facilis quis esse."], ["length", 6893], ["genre", "Western"], ["year", 2012], ["country", "China"], ["url", "http://walter.org/providenci_kaulke"], ["created_at", "2015-07-22 22:00:49.809369"], ["updated_at", "2015-07-22 22:00:49.809369"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Biography of Nicholas Cage 5: Armed and Fabulous"], ["info", "Accusamus quidem nulla quisquam est id assumenda vero omnis."], ["length", 8610], ["genre", "Western"], ["year", 2007], ["country", "China"], ["url", "http://reynoldsbeer.org/fermin"], ["created_at", "2015-07-22 22:00:49.812863"], ["updated_at", "2015-07-22 22:00:49.812863"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Biography of Nicholas Cage 4: The Kingdom Of The Crystal Skull"], ["info", "Maiores repudiandae magni facilis esse aut necessitatibus ut."], ["length", 10482], ["genre", "Action"], ["year", 1991], ["country", "Japan"], ["url", "http://roob.com/melia"], ["created_at", "2015-07-22 22:00:49.815921"], ["updated_at", "2015-07-22 22:00:49.815921"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "The Mummy 1: The Kingdom Of The Crystal Skull"], ["info", "Voluptatum molestias quis velit non sed eos error incidunt sed."], ["length", 10617], ["genre", "Western"], ["year", 1985], ["country", "China"], ["url", "http://botsfordzboncak.name/brayan.turner"], ["created_at", "2015-07-22 22:00:49.818872"], ["updated_at", "2015-07-22 22:00:49.818872"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Mummy 2: Resurrection"], ["info", "Et eos aut incidunt ducimus deserunt laboriosam."], ["length", 2486], ["genre", "Comedy"], ["year", 1950], ["country", "Mexico"], ["url", "http://robelgleason.info/deonte.deckow"], ["created_at", "2015-07-22 22:00:49.821694"], ["updated_at", "2015-07-22 22:00:49.821694"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Star Wars 5: Die Another Day"], ["info", "Cumque saepe sit nobis ut deleniti ipsam similique distinctio voluptatibus."], ["length", 5538], ["genre", "Action"], ["year", 1999], ["country", "Japan"], ["url", "http://schaden.biz/eliza"], ["created_at", "2015-07-22 22:00:49.824564"], ["updated_at", "2015-07-22 22:00:49.824564"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Mummy 3: With A Vengeance"], ["info", "Tenetur ab quod nobis quos enim ea voluptatem eos."], ["length", 3699], ["genre", "Action"], ["year", 1973], ["country", "Japan"], ["url", "http://johns.info/eli"], ["created_at", "2015-07-22 22:00:49.828795"], ["updated_at", "2015-07-22 22:00:49.828795"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Sharknado 5: The Kingdom Of The Crystal Skull"], ["info", "Nam sed voluptatem corrupti amet molestiae excepturi aut sunt velit."], ["length", 7761], ["genre", "Comedy"], ["year", 1989], ["country", "Mexico"], ["url", "http://nicolas.name/tracy"], ["created_at", "2015-07-22 22:00:49.831555"], ["updated_at", "2015-07-22 22:00:49.831555"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Hello Kitty Island Adventure 1: Armed and Fabulous"], ["info", "Ea cum quas explicabo a non nihil maiores in eaque."], ["length", 4251], ["genre", "Comedy"], ["year", 1965], ["country", "USA"], ["url", "http://botsfordschowalter.com/deon_wilderman"], ["created_at", "2015-07-22 22:00:49.834379"], ["updated_at", "2015-07-22 22:00:49.834379"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "info", "length", "genre", "year", "country", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hello Kitty Island Adventure 5: With A Vengeance"], ["info", "Ullam temporibus sit saepe odit enim pariatur est vel voluptatum."], ["length", 9465], ["genre", "Action"], ["year", 1967], ["country", "USA"], ["url", "http://jacobi.com/brenna"], ["created_at", "2015-07-22 22:00:49.837359"], ["updated_at", "2015-07-22 22:00:49.837359"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "ATL - BOS"], ["length", 21935], ["created_at", "2015-07-22 22:00:49.846068"], ["updated_at", "2015-07-22 22:00:49.846068"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "ATL - DEN"], ["length", 22775], ["created_at", "2015-07-22 22:00:49.848591"], ["updated_at", "2015-07-22 22:00:49.848591"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "ATL - LAX"], ["length", 22158], ["created_at", "2015-07-22 22:00:49.850861"], ["updated_at", "2015-07-22 22:00:49.850861"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "ATL - MIA"], ["length", 20382], ["created_at", "2015-07-22 22:00:49.853078"], ["updated_at", "2015-07-22 22:00:49.853078"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "ATL - SFO"], ["length", 10130], ["created_at", "2015-07-22 22:00:49.855204"], ["updated_at", "2015-07-22 22:00:49.855204"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "ATL - SEA"], ["length", 17961], ["created_at", "2015-07-22 22:00:49.857414"], ["updated_at", "2015-07-22 22:00:49.857414"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "ATL - JFK"], ["length", 19080], ["created_at", "2015-07-22 22:00:49.859671"], ["updated_at", "2015-07-22 22:00:49.859671"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "BOS - ATL"], ["length", 41344], ["created_at", "2015-07-22 22:00:49.862672"], ["updated_at", "2015-07-22 22:00:49.862672"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "BOS - DEN"], ["length", 7355], ["created_at", "2015-07-22 22:00:49.865238"], ["updated_at", "2015-07-22 22:00:49.865238"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "BOS - LAX"], ["length", 28506], ["created_at", "2015-07-22 22:00:49.867476"], ["updated_at", "2015-07-22 22:00:49.867476"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "BOS - MIA"], ["length", 20635], ["created_at", "2015-07-22 22:00:49.869671"], ["updated_at", "2015-07-22 22:00:49.869671"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "BOS - SFO"], ["length", 35776], ["created_at", "2015-07-22 22:00:49.871840"], ["updated_at", "2015-07-22 22:00:49.871840"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "BOS - SEA"], ["length", 8889], ["created_at", "2015-07-22 22:00:49.874623"], ["updated_at", "2015-07-22 22:00:49.874623"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "BOS - JFK"], ["length", 29653], ["created_at", "2015-07-22 22:00:49.877506"], ["updated_at", "2015-07-22 22:00:49.877506"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "DEN - ATL"], ["length", 40849], ["created_at", "2015-07-22 22:00:49.880010"], ["updated_at", "2015-07-22 22:00:49.880010"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "DEN - BOS"], ["length", 28416], ["created_at", "2015-07-22 22:00:49.882282"], ["updated_at", "2015-07-22 22:00:49.882282"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "DEN - LAX"], ["length", 29706], ["created_at", "2015-07-22 22:00:49.884983"], ["updated_at", "2015-07-22 22:00:49.884983"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "DEN - MIA"], ["length", 15824], ["created_at", "2015-07-22 22:00:49.887352"], ["updated_at", "2015-07-22 22:00:49.887352"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "DEN - SFO"], ["length", 36105], ["created_at", "2015-07-22 22:00:49.889595"], ["updated_at", "2015-07-22 22:00:49.889595"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "DEN - SEA"], ["length", 35243], ["created_at", "2015-07-22 22:00:49.892646"], ["updated_at", "2015-07-22 22:00:49.892646"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "DEN - JFK"], ["length", 38995], ["created_at", "2015-07-22 22:00:49.896535"], ["updated_at", "2015-07-22 22:00:49.896535"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "LAX - ATL"], ["length", 16990], ["created_at", "2015-07-22 22:00:49.899025"], ["updated_at", "2015-07-22 22:00:49.899025"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "LAX - BOS"], ["length", 35788], ["created_at", "2015-07-22 22:00:49.901857"], ["updated_at", "2015-07-22 22:00:49.901857"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "LAX - DEN"], ["length", 35790], ["created_at", "2015-07-22 22:00:49.904343"], ["updated_at", "2015-07-22 22:00:49.904343"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "LAX - MIA"], ["length", 22674], ["created_at", "2015-07-22 22:00:49.906959"], ["updated_at", "2015-07-22 22:00:49.906959"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "LAX - SFO"], ["length", 7990], ["created_at", "2015-07-22 22:00:49.910136"], ["updated_at", "2015-07-22 22:00:49.910136"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "LAX - SEA"], ["length", 33755], ["created_at", "2015-07-22 22:00:49.912778"], ["updated_at", "2015-07-22 22:00:49.912778"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "LAX - JFK"], ["length", 23907], ["created_at", "2015-07-22 22:00:49.915272"], ["updated_at", "2015-07-22 22:00:49.915272"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "MIA - ATL"], ["length", 15235], ["created_at", "2015-07-22 22:00:49.918073"], ["updated_at", "2015-07-22 22:00:49.918073"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "MIA - BOS"], ["length", 18091], ["created_at", "2015-07-22 22:00:49.920495"], ["updated_at", "2015-07-22 22:00:49.920495"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "MIA - DEN"], ["length", 36046], ["created_at", "2015-07-22 22:00:49.922833"], ["updated_at", "2015-07-22 22:00:49.922833"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "MIA - LAX"], ["length", 21751], ["created_at", "2015-07-22 22:00:49.925694"], ["updated_at", "2015-07-22 22:00:49.925694"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "MIA - SFO"], ["length", 12050], ["created_at", "2015-07-22 22:00:49.928054"], ["updated_at", "2015-07-22 22:00:49.928054"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "MIA - SEA"], ["length", 43157], ["created_at", "2015-07-22 22:00:49.932077"], ["updated_at", "2015-07-22 22:00:49.932077"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "MIA - JFK"], ["length", 39373], ["created_at", "2015-07-22 22:00:49.936542"], ["updated_at", "2015-07-22 22:00:49.936542"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SFO - ATL"], ["length", 24508], ["created_at", "2015-07-22 22:00:49.938975"], ["updated_at", "2015-07-22 22:00:49.938975"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SFO - BOS"], ["length", 11217], ["created_at", "2015-07-22 22:00:49.941398"], ["updated_at", "2015-07-22 22:00:49.941398"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SFO - DEN"], ["length", 33370], ["created_at", "2015-07-22 22:00:49.944951"], ["updated_at", "2015-07-22 22:00:49.944951"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SFO - LAX"], ["length", 33235], ["created_at", "2015-07-22 22:00:49.955259"], ["updated_at", "2015-07-22 22:00:49.955259"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SFO - MIA"], ["length", 41568], ["created_at", "2015-07-22 22:00:49.958235"], ["updated_at", "2015-07-22 22:00:49.958235"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SFO - SEA"], ["length", 21706], ["created_at", "2015-07-22 22:00:49.960860"], ["updated_at", "2015-07-22 22:00:49.960860"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SFO - JFK"], ["length", 22825], ["created_at", "2015-07-22 22:00:49.963513"], ["updated_at", "2015-07-22 22:00:49.963513"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SEA - ATL"], ["length", 22717], ["created_at", "2015-07-22 22:00:49.967619"], ["updated_at", "2015-07-22 22:00:49.967619"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SEA - BOS"], ["length", 19156], ["created_at", "2015-07-22 22:00:49.970394"], ["updated_at", "2015-07-22 22:00:49.970394"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SEA - DEN"], ["length", 22627], ["created_at", "2015-07-22 22:00:49.973065"], ["updated_at", "2015-07-22 22:00:49.973065"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SEA - LAX"], ["length", 9084], ["created_at", "2015-07-22 22:00:49.975855"], ["updated_at", "2015-07-22 22:00:49.975855"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SEA - MIA"], ["length", 14267], ["created_at", "2015-07-22 22:00:49.978441"], ["updated_at", "2015-07-22 22:00:49.978441"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "SEA - SFO"], ["length", 13566], ["created_at", "2015-07-22 22:00:49.983459"], ["updated_at", "2015-07-22 22:00:49.983459"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "SEA - JFK"], ["length", 36022], ["created_at", "2015-07-22 22:00:49.988306"], ["updated_at", "2015-07-22 22:00:49.988306"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "JFK - ATL"], ["length", 27261], ["created_at", "2015-07-22 22:00:49.991088"], ["updated_at", "2015-07-22 22:00:49.991088"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "JFK - BOS"], ["length", 13614], ["created_at", "2015-07-22 22:00:49.994525"], ["updated_at", "2015-07-22 22:00:49.994525"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "JFK - DEN"], ["length", 22655], ["created_at", "2015-07-22 22:00:49.998531"], ["updated_at", "2015-07-22 22:00:49.998531"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "JFK - LAX"], ["length", 35810], ["created_at", "2015-07-22 22:00:50.002946"], ["updated_at", "2015-07-22 22:00:50.002946"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "JFK - MIA"], ["length", 38853], ["created_at", "2015-07-22 22:00:50.005975"], ["updated_at", "2015-07-22 22:00:50.005975"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["route", "JFK - SFO"], ["length", 7287], ["created_at", "2015-07-22 22:00:50.009495"], ["updated_at", "2015-07-22 22:00:50.009495"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "flights" ("route", "length", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["route", "JFK - SEA"], ["length", 36288], ["created_at", "2015-07-22 22:00:50.013305"], ["updated_at", "2015-07-22 22:00:50.013305"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "You found a time machine!  What do you do?!"], ["created_at", "2015-07-22 22:00:50.044310"], ["updated_at", "2015-07-22 22:00:50.044310"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Befriend the Dinosaurs"], ["question_id", 1], ["created_at", "2015-07-22 22:00:50.058322"], ["updated_at", "2015-07-22 22:00:50.058322"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Laugh with John Belushi"], ["question_id", 1], ["created_at", "2015-07-22 22:00:50.064198"], ["updated_at", "2015-07-22 22:00:50.064198"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Watch the tragic plays of Ancient Rome"], ["question_id", 1], ["created_at", "2015-07-22 22:00:50.068113"], ["updated_at", "2015-07-22 22:00:50.068113"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Live in the Wild West"], ["question_id", 1], ["created_at", "2015-07-22 22:00:50.071098"], ["updated_at", "2015-07-22 22:00:50.071098"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "The plane is crash-landing!  Ahh!  What country\n                              do you hope to find yourself in?"], ["created_at", "2015-07-22 22:00:50.074184"], ["updated_at", "2015-07-22 22:00:50.074184"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "USA"], ["question_id", 2], ["created_at", "2015-07-22 22:00:50.079109"], ["updated_at", "2015-07-22 22:00:50.079109"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "China"], ["question_id", 2], ["created_at", "2015-07-22 22:00:50.081696"], ["updated_at", "2015-07-22 22:00:50.081696"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Mexico"], ["question_id", 2], ["created_at", "2015-07-22 22:00:50.087017"], ["updated_at", "2015-07-22 22:00:50.087017"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Japan"], ["question_id", 2], ["created_at", "2015-07-22 22:00:50.089798"], ["updated_at", "2015-07-22 22:00:50.089798"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "How long do you like your movies?"], ["created_at", "2015-07-22 22:00:50.093696"], ["updated_at", "2015-07-22 22:00:50.093696"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "short"], ["question_id", 3], ["created_at", "2015-07-22 22:00:50.097335"], ["updated_at", "2015-07-22 22:00:50.097335"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "average"], ["question_id", 3], ["created_at", "2015-07-22 22:00:50.102020"], ["updated_at", "2015-07-22 22:00:50.102020"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "long"], ["question_id", 3], ["created_at", "2015-07-22 22:00:50.105275"], ["updated_at", "2015-07-22 22:00:50.105275"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "titanic"], ["question_id", 3], ["created_at", "2015-07-22 22:00:50.108032"], ["updated_at", "2015-07-22 22:00:50.108032"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
