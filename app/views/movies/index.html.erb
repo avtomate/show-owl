@@ -1,8 +1,8 @@
 <div class="quiz-container">
   <h1>Index View</h1>
   <h3>Please choose your flight:</h3>
-    <form action="/movies/show" method="get">
-      <select name="flight-route">
+    <form action="/movies/show" method="get" id="form">
+      <select name="flight_name">
         <% @flights.each do |flight| %>
           <option value="<%=flight.route%>"><%=flight.route%></option>
         <% end %>
@@ -13,22 +13,16 @@
         <div class="qa-container" id="<%=question.id%>">
           <h4><%= question.content %></h4>
           <% question.answers.each do |answer| %>
-            <input type="radio" name="q<%=answer.question_id%>-radio" value="<%=answer.content%>"><%=answer.content%><br>
+            <input type="radio" name="q<%=answer.question_id%>_radio" value="<%=answer.content%>"><%=answer.content%><br>
           <% end %>
         </div>
       <% end %>
 
       <br><br>
-      <input type="submit" value="Show me the money!">
+      <input type="submit" value="Show me the movies!">
     </form>
 </div>
 
 <div class="movies">
+  <p class="flight-length-hours"></p>
 </div>
-
-<!-- <form accept-charset="UTF-8" action="/movies/show" method="get">
-  <input name="utf8" type="hidden" value="&#x2713;" />
-  <label for="q">Search for:</label>
-  <input id="q" name="q" type="text" />
-  <input name="commit" type="submit" value="Search" />
-</form> -->

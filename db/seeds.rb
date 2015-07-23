@@ -13,7 +13,7 @@ title_country = %w[USA China Mexico Japan]
 genres = %w[Action Comedy Drama Western]
 
 50.times do |i|
-  Movie.create(title: "#{title_noun.sample} #{Random.rand(1..5)}: #{title_suffix_words.sample}",
+  Movie.create(title: "#{title_noun.sample} #{Random.rand(2..5)}: #{title_suffix_words.sample}",
                info: Faker::Lorem.sentence(5),
                length: Random.rand(1800..10800),
                genre: genres.sample,
