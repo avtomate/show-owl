@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+   display: inline-block;
+ }
+
+#navbar-title {
+  color: white;
+}
+
+.qa-container {
+  padding: 5px;
+  outline: 1px solid black;
+  margin: 5px;
+}
+
+.movie-div {
+  padding: 5px;
+  outline: 1px solid black;
+  margin: 5px;
+}

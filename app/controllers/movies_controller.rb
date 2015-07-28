@@ -38,6 +38,7 @@ class MoviesController < ApplicationController
       end
 
     end
+    #sort scores in descending order
     @movie_scores = Hash[*(@movie_scores.sort_by{|k,v| v}.reverse).flatten]
     @sorted_movies = []
     @movie_scores.each do |k,v|

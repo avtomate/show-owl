@@ -1,5 +1,5 @@
 <div class="quiz-container">
-  <h1>Show Owl</h1>
+  <br><br><br><br>
   <h3>Please choose your flight:</h3>
     <form action="/movies/show" method="get" id="form">
       <select name="flight_name">
@@ -11,9 +11,9 @@
       <h3>Please answer these questions:</h3>
       <% @questions.each do |question| %>
         <div class="qa-container" id="<%=question.id%>">
-          <h4><%= question.content %></h4>
+          <h4><%="#{@questions.index(question) + 1}. " %><%= question.content %></h4>
           <% question.answers.each do |answer| %>
-            <input type="radio" name="q<%=answer.question_id%>_radio" value="<%=answer.content%>"><%=answer.content%><br>
+            <input type="radio" name="q<%=answer.question_id%>_radio" value="<%=answer.content%>"><%=" #{answer.content}"%><br>
           <% end %>
         </div>
       <% end %>

@@ -10,16 +10,20 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <%= link_to("Show Owl", '/', id: "logo") %>
+      <h4 id='navbar-title'>Show Owl</h4>
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to("Home",  '/') %></li>
-          <li><%= link_to("About", '/about') %></li>
+          <!-- <li><%= link_to("About", '/about') %></li> -->
         </ul>
       </nav>
     </div>
