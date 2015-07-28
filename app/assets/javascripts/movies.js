@@ -4,7 +4,6 @@
 // renamed from movies.coffee
 $(document).ready(function() {
   submitInfo();
-  //hideInfo();
 });
 
 function submitInfo(){
