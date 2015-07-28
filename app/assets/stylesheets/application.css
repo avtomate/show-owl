@@ -13,14 +13,13 @@
  *= require_tree .
  *= require_self
  */
- 
+
 #navbar-title {
   color: white;
 }
 
 .qa-container {
   padding: 5px;
-  outline: 1px solid black;
   margin: 5px;
 }
 
