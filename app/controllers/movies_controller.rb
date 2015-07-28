@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    p params
     flight = Flight.where(route: params[:flight_name]).first
     time_remaining = flight.length
     @movie_scores = Hash.new(0)
@@ -26,13 +27,13 @@ class MoviesController < ApplicationController
       @movie_scores[movie.id] += category_multipliers[1] if movie.country == params[:q2_radio]
 
       #allocate movie length
-      if movie.length <= 4050 && params[:length] == 'short'
+      if movie.length <= 4050 && params[:q3_radio] == 'short'
         @movie_scores[movie.id] += category_multipliers[2]
-      elsif movie.length > 4050 && movie.length <= 6300 && params[:length] == 'average'
+      elsif movie.length > 4050 && movie.length <= 6300 && params[:q3_radio] == 'average'
         @movie_scores[movie.id] += category_multipliers[2]
-      elsif movie.length > 6300 && movie.length <= 8550 && params[:length] == 'long'
+      elsif movie.length > 6300 && movie.length <= 8550 && params[:q3_radio] == 'long'
         @movie_scores[movie.id] += category_multipliers[2]
-      elsif movie.length > 8550 && movie.length <= 10800 && params[:length] == 'titanic'
+      elsif movie.length > 8550 && movie.length <= 10800 && params[:q3_radio] == 'titanic'
         @movie_scores[movie.id] += category_multipliers[2]
       end
 

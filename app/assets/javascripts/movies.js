@@ -4,6 +4,7 @@
 // renamed from movies.coffee
 $(document).ready(function() {
   submitInfo();
+  //hideInfo();
 });
 
 function submitInfo(){
@@ -17,13 +18,29 @@ function submitInfo(){
       data: $(this).serialize(),
       dataType: 'JSON'
     }).done(function(response){
-      console.log(response)
+      $('.quiz-container').toggle();
       var hours = Math.floor(response.flight.length/3600)
       var mins = Math.floor(response.flight.length%3600/60)
       $('.flight-length-hours').append(hours + ' hours and '+ mins + ' minutes:')
-      for(i=0;i<response.final_movies.length;i++){
-        $('.movies').append(response.final_movies[i].title + '<br>')
+      for (var i=0;i<response.final_movies.length;i++) {
+        var imgUrl = '<img src="http://i.imgur.com/0ib88he.png>" height="60" width="60">'
+        $('.movies-container').append("<div class='movie-div'></div>");
+        $('.movie-div').last().append('<h3>' + response.final_movies[i].title + '</h3>' + '<br>');
+        $('.movie-div').last().append(imgUrl + '<br>');
+        $('.movie-div').last().append('<p>' + response.final_movies[i].info + '</p>'+'<br>');
+        $('.movie-div p').last().hide()
+        //showinfo
+        $('.movie-div').last().on('click', function() {
+          $(this).last().find('p').toggle()
+        })
       }
     })
   })
 }
+
+// function showInfo(){
+//   $('.movie-div').last().on('click', function() {
+//     var description = response.final_movies[i].info
+//     $(this).last().append('APPENDED CORRECTLY');
+//   })
+// }
