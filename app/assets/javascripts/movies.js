@@ -25,7 +25,7 @@ function submitInfo(){
       $('.flight-length-hours').append(hours + ' hours and '+ mins + ' minutes:')
       for (var i=0;i<response.final_movies.length;i++) {
         var imgUrl = '<img src="http://i.imgur.com/0ib88he.png>" height="60" width="60">'
-        $('.movies-container').append("<div class='movie-div'></div>");
+        $('.movies-container').append("<div class='movie-div col-sm-6'><br></div>");
         $('.movie-div').last().append('<h5>' + response.final_movies[i].title + '</h5>');
         $('.movie-div').last().append(imgUrl + '<br>');
         $('.movie-div').last().append('<p>' + response.final_movies[i].info + '</p>'+'<br>');
