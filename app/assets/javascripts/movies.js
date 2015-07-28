@@ -20,7 +20,6 @@ function submitInfo(){
       $('.quiz-container').toggle();
       var hours = Math.floor(response.flight.length/3600)
       var mins = Math.floor(response.flight.length%3600/60)
-      $('.flight-length-hours').append('<br><br><br><br><br>')
       $('.flight-length-hours').append('Click each box for more info!<br>')
       $('.flight-length-hours').append(hours + ' hours and '+ mins + ' minutes:')
       for (var i=0;i<response.final_movies.length;i++) {
